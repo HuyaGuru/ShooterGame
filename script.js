@@ -25,7 +25,7 @@ function round() {
 		if (fightersHealth.includes(0)) {
 			fighting = false;
 			victor = totalPlayers - 1 - fightersHealth.indexOf(0);
-			return victor;
+			return {victor, victorHealth: fightersHealth[victor]};
 		} else {
 			// setInterval(fight(fighters), 50);
 			fight(fightersHealth);
@@ -42,15 +42,15 @@ function match(players) {
 			};
 		} else {
 			let victor = round();
-            var br = document.createElement('br');
+			var br = document.createElement("br");
 			let roundsNode = document.getElementById("rounds");
 			roundsNode.appendChild(br);
 			roundsNode.appendChild(
 				document.createTextNode(
-					`Round ${rounds + 1} winner: ${victor + 1}`
+					`Round ${rounds + 1} winner: ${victor.victor + 1}, Fighter's Health when round ended ${victor.victorHealth}`
 				)
 			);
-			players[victor] = players[victor] + 1;
+			players[victor.victor] = players[victor.victor] + 1;
 		}
 		rounds = rounds + 1;
 	}
