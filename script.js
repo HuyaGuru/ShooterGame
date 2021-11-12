@@ -60,23 +60,19 @@ function match(players) {
 
 function startGame() {
 	let players = [0, 0];
-	document.getElementById("player1Victories").innerHTML =
-		"Victories: " + players[0];
-	document.getElementById("player2Victories").innerHTML =
-		"Victories: " + players[1];
 	document.getElementById("winner").innerHTML = "Winner is";
 	document.getElementById("rounds").innerHTML = "";
 	let gameScore = null;
 	while (gameScore === null || gameScore === undefined) {
 		gameScore = match(players);
 	}
+	document.getElementById("player1Victories").innerHTML =
+		"Victories: " + players[0];
+	document.getElementById("player2Victories").innerHTML =
+		"Victories: " + players[1];
 	if (gameScore.winner === 0) {
-		document.getElementById("player1Victories").innerHTML =
-			"Victories: " + gameScore.victories;
 		document.getElementById("winner").innerHTML = "Winner is Player 1!";
 	} else {
-		document.getElementById("player2Victories").innerHTML =
-			"Victories: " + gameScore.victories;
 		document.getElementById("winner").innerHTML = "Winner is Player 2!";
 	}
 }
