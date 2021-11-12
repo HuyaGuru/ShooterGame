@@ -49,7 +49,7 @@ function match(players) {
 				document.createTextNode(
 					`Round ${rounds + 1} winner: ${
 						victor.victor + 1
-					}, Fighter's Health when round ended ${victor.victorHealth}`
+					}, Player's Health when round ended: ${victor.victorHealth}`
 				)
 			);
 			players[victor.victor] = players[victor.victor] + 1;
