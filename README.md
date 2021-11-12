@@ -1,2 +1,2 @@
 # ShooterGame
-Link: https://huyaguru.github.io/ShooterGame/
+Link: https://huyaguru-shootergame.netlify.app/
