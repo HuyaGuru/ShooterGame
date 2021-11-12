@@ -47,9 +47,9 @@ function match(players) {
 			roundsNode.appendChild(br);
 			roundsNode.appendChild(
 				document.createTextNode(
-					`Round ${rounds + 1} winner: ${
+					`Round ${rounds + 1} winner: Player ${
 						victor.victor + 1
-					}, Player's Health when round ended: ${victor.victorHealth}`
+					}, Remaining Health: ${victor.victorHealth}`
 				)
 			);
 			players[victor.victor] = players[victor.victor] + 1;
