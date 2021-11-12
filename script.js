@@ -25,7 +25,7 @@ function round() {
 		if (fightersHealth.includes(0)) {
 			fighting = false;
 			victor = totalPlayers - 1 - fightersHealth.indexOf(0);
-			return {victor, victorHealth: fightersHealth[victor]};
+			return { victor, victorHealth: fightersHealth[victor] };
 		} else {
 			// setInterval(fight(fighters), 50);
 			fight(fightersHealth);
@@ -47,7 +47,9 @@ function match(players) {
 			roundsNode.appendChild(br);
 			roundsNode.appendChild(
 				document.createTextNode(
-					`Round ${rounds + 1} winner: ${victor.victor + 1}, Fighter's Health when round ended ${victor.victorHealth}`
+					`Round ${rounds + 1} winner: ${
+						victor.victor + 1
+					}, Fighter's Health when round ended ${victor.victorHealth}`
 				)
 			);
 			players[victor.victor] = players[victor.victor] + 1;
